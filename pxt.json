@@ -1,0 +1,42 @@
+{
+    "name": "abantu",
+    "version": "0.0.0",
+    "description": "abantu",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "microphone": "*",
+        "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.1"
+    },
+    "files": [
+        "README.md",
+        "bitabantu.cpp",
+        "bitabantu.ts",
+        "_locales/zh/bitplayer-strings.json",
+        "_locales/zh/bitplayer-jsdoc-strings.json",
+        "_locales/ja/neopixel-strings.json",
+        "_locales/de/neopixel-strings.json",
+        "_locales/de/neopixel-jsdoc-strings.json",
+        "_locales/fr/neopixel-strings.json",
+        "_locales/fr/neopixel-jsdoc-strings.json",
+        "_locales/zh/neopixel-strings.json"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj",
+    "yotta": {
+        "config": {
+            "microbit-dal": {
+                "bluetooth": {
+                    "enabled": 0
+                }
+            }
+        }
+    }
+}
