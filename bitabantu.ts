@@ -298,7 +298,7 @@ namespace BitAbantu {
     //% block="BitCar: left motor $left \\%, right motor$right \\%"
     //% left.shadow="speedPicker"
     //% right.shadow="speedPicker"
-    //% group="BitCar Control"
+    //% group="M-Car Control"
     //% weight=100
     export function move(left: number, right: number) {
         if (left >= 0) {
@@ -322,7 +322,7 @@ namespace BitAbantu {
     */
     //% blockId=stop
     //% block="BitCar: stop"
-    //% group="BitCar Control"
+    //% group="M-Car Control"
     //% weight=99
     //% blockGap=40
     export function stop() {
@@ -340,7 +340,7 @@ namespace BitAbantu {
     //% speed.defl=100
     //% speed.min=0 speed.max=100
     //% charge.defl=250
-    //% group="BitCar Control"
+    //% group="M-Car Control"
     //% weight=98
     //% blockGap=40
     export function standup_still(speed: number, charge: number) {
@@ -357,7 +357,7 @@ namespace BitAbantu {
     */
     //% blockId=linesensor
     //% block="BitCar: line under $sensor|"
-    //% group="BitCar Control"
+    //% group="M-Car Control"
     //% weight=97
     export function linesensor(sensor: IRLineSensor): boolean {
         let result: boolean = false;
@@ -381,7 +381,7 @@ namespace BitAbantu {
     //% block="BitCar: follow line at speed $speed \\%"
     //% speed.defl=50
     //% speed.min=0 speed.max=100
-    //% group="BitCar Control"
+    //% group="M-Car Control"
     //% weight=96
     export function linefollow(speed: number) {
         if (linesensor(IRLineSensor.left) && linesensor(IRLineSensor.right)) {
@@ -403,58 +403,7 @@ namespace BitAbantu {
         }
     }
 
-    /**
-    * Get the distance from Grove-Ultrasonic Sensor, the measuring range is between 2-350cm
-    */
-    //% blockId=grove_ultrasonic
-    //% block="Ultrasonic Sensor $groveport|: distance in $Unit"
-    //% group="Sensors"
-    //% weight=100
-    export function grove_ultrasonic(groveport: GrovePin, Unit: DistanceUnit): number {
-        let duration = 0;
-        let distance = 0;
-        let port: number = groveport;
 
-        pins.digitalWritePin(<DigitalPin>port, 0);
-        control.waitMicros(2);
-        pins.digitalWritePin(<DigitalPin>port, 1);
-        control.waitMicros(10);
-        pins.digitalWritePin(<DigitalPin>port, 0);
-
-        duration = pins.pulseIn(<DigitalPin>port, PulseValue.High, 50000);
-
-        if (Unit == DistanceUnit.cm) distance = duration * 153 / 58 / 100;
-        else distance = duration * 153 / 148 / 100;
-        basic.pause(50);
-        if (distance > 0) return Math.floor(distance * 10) / 10;
-        else return 350;
-    }
-    /**
-    * Get the distance from Grove-Ultrasonic Sensor, the measuring range is between 2-350cm
-    */
-    //% blockId=grove_ultrasonic_v2
-    //% block="(V2)Ultrasonic Sensor $groveport|: distance in $Unit"
-    //% group="Sensors"
-    //% weight=99
-    export function grove_ultrasonic_v2(groveport: GrovePin, Unit: DistanceUnit): number {
-        let duration = 0;
-        let distance = 0;
-        let port: number = groveport;
-
-        pins.digitalWritePin(<DigitalPin>port, 0);
-        control.waitMicros(2);
-        pins.digitalWritePin(<DigitalPin>port, 1);
-        control.waitMicros(10);
-        pins.digitalWritePin(<DigitalPin>port, 0);
-
-        duration = pins.pulseIn(<DigitalPin>port, PulseValue.High, 50000);
-
-        if (Unit == DistanceUnit.cm) distance = duration * 153 / 88 / 100;
-        else distance = duration * 153 / 226 / 100;
-        basic.pause(50);
-        if (distance > 0) return Math.floor(distance * 10) / 10;
-        else return 350;
-    }
 
     /**
      * Send a ping and get the echo time (in microseconds) as a result
@@ -463,6 +412,7 @@ namespace BitAbantu {
      * @param unit desired conversion unit
      * @param maxCmDistance maximum distance in centimeters (default is 500)
      */
+    //% group="Sensors"
     //% blockId=sonar_ping block="ping trig %trig|echo %echo|unit %unit"
     export function ping(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
         // send pulse
@@ -996,6 +946,7 @@ namespace BitAbantu {
      * @param s saturation from 0 to 99
      * @param l luminosity from 0 to 99
      */
+    //% subcategory="Neopixel"
     //% blockId=neopixelHSL block="hue %h|saturation %s|luminosity %l"
     export function hsl(h: number, s: number, l: number): number {
         h = Math.round(h);
