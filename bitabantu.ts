@@ -167,7 +167,7 @@ namespace BitAbantu {
 	/**
 	 * 
 	 */
-    //% shim=BitAbantu::init
+    //% shim=bitabantu::init
     function init(): void {
         return;
     }
