@@ -13,7 +13,7 @@
   "BitAbantuKeyEvent.released|block": "松开",
 
   "BitAbantu.OnKey|block": "当按键 $key| 被 $keyEvent",
-  "BitAbantu|block": "BitPlayer",
+  "BitAbantu|block": "BitAbantu",
   "Joystick.Down|block": " ↓ Down",
   "Joystick.Left|block": " ← Left",
   "Joystick.LowerLeft|block": " LowerLeft",
@@ -23,5 +23,5 @@
   "Joystick.UpLeft|block": " UpLeft",
   "Joystick.UpRight|block": " UpRight",
   "Joystick.Up|block": " ↑ Up",
-  "{id:category}BitAbantu": "BitPlayer"
+  "{id:category}BitAbantu": "BitAbantu"
 }
