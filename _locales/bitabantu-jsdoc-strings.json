@@ -1,0 +1,11 @@
+{
+  "BitAbantu": "Provides access to BitPlayer blocks for micro: bit functionality.",
+  "BitAbantu.KeyPressed": "Get the key state (pressed or not)",
+  "BitAbantu.KeyPressed|param|key": "the pin that acts as a button",
+  "BitAbantu.OnJoystick": "Get the joystick state",
+  "BitAbantu.OnJoystick|param|position": "the current position of joystick",
+  "BitAbantu.OnKey": "Do立刻精神的 something when a key is pressed, releassed or clicked",
+  "BitAbantu.SetMotor": "turn on of off the vibration motor",
+  "BitAbantuKeyEvent": "Button Events of BitPlayer",
+  "Joystick": "***************************************************************************\r\n| Description :\tBitAbantu extension for micro:bit\r\n| Developer   :   CH Makered\r\n| More Info   :\thttp://chmakered.com/\r\n****************************************************************************"
+}
