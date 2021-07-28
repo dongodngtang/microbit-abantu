@@ -1,7 +1,7 @@
 {
-    "name": "abantu",
+    "name": "bitabantu",
     "version": "0.0.1",
-    "description": "abantu",
+    "description": "bitabantu",
     "license": "MIT",
     "dependencies": {
         "core": "*",
@@ -14,16 +14,7 @@
         "bitabantu.cpp",
         "bitabantu.ts",
         "_locales/zh/bitabantu-strings.json",
-        "_locales/zh/bitabantu-jsdoc-strings.json",
-        "_locales/ja/neopixel-strings.json",
-        "_locales/de/neopixel-strings.json",
-        "_locales/de/neopixel-jsdoc-strings.json",
-        "_locales/fr/neopixel-strings.json",
-        "_locales/fr/neopixel-jsdoc-strings.json",
-        "_locales/zh/neopixel-strings.json",
-        "_locales/zh/neopixel-strings.json",
-        "_locales/zh/pxt-bitcar-jsdoc-strings.json",
-        "_locales/zh/pxt-bitcar-strings.json"
+        "_locales/zh/bitabantu-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"
